@@ -32,7 +32,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
      |     | F1  | F2  | F3  | F4  | F5  | F6  | F7  | F8  | F9  | F10 | F11 | F12 | INS | DEL |
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-     |     | WHU | MCU | WHD |     |     |     |     |     |     |     | UP  | ACL |    BS     |
+     |     | WHD | MCU | WHU |     |     |     |     |     |     |     | UP  | ACL |    BS     |
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
      |     | MCL | MCD | MCR |     |     |     |     |     |     | LEF | RIG |       ENT       |
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
@@ -42,7 +42,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            |-----+-----------+-----------------------+-----------+-----|
     */
     KEYMAP(TRNS,F1,  F2,  F3,  F4,  F5,  F6,  F7,  F8,  F9,  F10, F11, F12, INS, DEL,  \
-           TRNS,WH_U,MS_U,WH_D,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,UP,  ACL1,BSPC,      \
+           TRNS,WH_D,MS_U,WH_U,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,UP,  ACL1,BSPC,      \
            TRNS,MS_L,MS_D,MS_R,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,RGHT,PENT,           \
            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,DOWN,TRNS,TRNS,           \
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
