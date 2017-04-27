@@ -18,14 +18,14 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
      | SFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |    SFT    |    FN0    |
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-           | GUI |    ALT    |         SPACE         |    ALT    | FN1 |
+           | GUI |    ALT    |         SPACE         |    ALT    | GUI |
            |-----+-----------+-----------------------+-----------+-----|
     */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,  \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,      \
            LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,            \
            LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,FN0,            \
-                LGUI,LALT,          SPC,                RALT,FN1),
+                LGUI,LALT,          SPC,                RALT,RGUI),
 
     /* Layer HHKB: HHKB mode (Fn0)
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
