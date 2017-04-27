@@ -45,25 +45,6 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
            TRNS,MS_L,MS_D,MS_R,END, TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,RGHT,PENT,           \
            TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,DOWN,TRNS,TRNS,           \
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
-
-    /* Layer HJKL: HJKL mode (Fn1)
-     |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |     |
-     |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-     |     |     |     |     |     |     |     |     |     |     |     |     |     |           |
-     |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-     |     |     |     |     |     |     | LEF | DWN | UP  | RIG |     |     |                 |
-     |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-     |     |     |     |     |     |     |     |     |     |     |     |           |           |
-     |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-           |     |           |                       |           |     |
-           |-----+-----------+-----------------------+-----------+-----|
-    */
-    KEYMAP(TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS, \
-           TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,      \
-           TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,LEFT,DOWN,UP,  RGHT,TRNS,TRNS,TRNS,           \
-           TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,TRNS,           \
-                TRNS,TRNS,          TRNS,               TRNS,TRNS),
 };
 
 /*
@@ -75,5 +56,4 @@ const action_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
 const action_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_LAYER_MOMENTARY(1),
-    [1] = ACTION_LAYER_TOGGLE(2),
 };
