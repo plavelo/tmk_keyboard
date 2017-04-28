@@ -18,14 +18,14 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
      | SFT |  Z  |  X  |  C  |  V  |  B  |  N  |  M  |  ,  |  .  |  /  |    SFT    |    FN0    |
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
-           | GUI |    ALT    |         SPACE         |    ALT    | GUI |
+           | GUI |    ALT    |         SPACE         |    ALT    | FN1 |
            |-----+-----------+-----------------------+-----------+-----|
     */
     KEYMAP(ESC, 1,   2,   3,   4,   5,   6,   7,   8,   9,   0,   MINS,EQL, BSLS,GRV,  \
            TAB, Q,   W,   E,   R,   T,   Y,   U,   I,   O,   P,   LBRC,RBRC,BSPC,      \
            LCTL,A,   S,   D,   F,   G,   H,   J,   K,   L,   SCLN,QUOT,ENT,            \
            LSFT,Z,   X,   C,   V,   B,   N,   M,   COMM,DOT, SLSH,RSFT,FN0,            \
-                LGUI,LALT,          SPC,                RALT,RGUI),
+                LGUI,LALT,          SPC,                RALT,FN1),
 
     /* Layer HHKB: HHKB mode (Fn0)
      |-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----+-----|
@@ -47,6 +47,11 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
                 TRNS,TRNS,          BTN1,               TRNS,TRNS),
 };
 
+/* id for user defined functions and macros */
+enum macro_id {
+    SUSHI,
+};
+
 /*
  * Fn action definition
  */
@@ -56,4 +61,24 @@ const action_t fn_actions[] __attribute__ ((section (".keymap.fn_actions"))) = {
 const action_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_LAYER_MOMENTARY(1),
+    [1] = ACTION_MACRO(SUSHI),
 };
+
+/*
+ * Macro definition
+ */
+const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
+{
+    switch (id) {
+        case SUSHI:
+            return (record->event.pressed ?
+                    MACRO(
+                        I(0),
+                        D(LSFT), T(SCLN), U(LSFT),
+                        T(S), T(U), T(S), T(H), T(I),
+                        D(LSFT), T(SCLN), U(LSFT),
+                        END
+                    ) : MACRO_NONE);
+    }
+    return MACRO_NONE;
+}
