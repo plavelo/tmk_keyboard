@@ -50,7 +50,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 /* id for user defined functions and macros */
 enum macro_id {
     SLEEP,
-    SUSHI,
+    DOMO,
 };
 
 /*
@@ -63,7 +63,7 @@ const action_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_LAYER_MOMENTARY(1),
     [1] = ACTION_MACRO(SLEEP),
-    [2] = ACTION_MACRO(SUSHI),
+    [2] = ACTION_MACRO(DOMO),
 };
 
 /*
@@ -80,14 +80,12 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                         U(LCTL), U(LSFT), U(POWER),
                         END
                     ) : MACRO_NONE);
-        case SUSHI:
+        case DOMO:
             return (record->event.pressed ?
                     MACRO(
                         I(0),
-                        D(LSFT), T(SCLN), U(LSFT),
-                        T(S), T(U), T(S), T(H), T(I),
-                        D(LSFT), T(SCLN), U(LSFT),
-                        T(SPC), END
+                        T(M), D(LSFT), T(9), T(MINS), T(SPC), T(MINS), T(0), U(LSFT), T(M),
+                        END
                     ) : MACRO_NONE);
     }
     return MACRO_NONE;
