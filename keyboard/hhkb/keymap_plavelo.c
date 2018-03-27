@@ -50,6 +50,7 @@ const uint8_t keymaps[][MATRIX_ROWS][MATRIX_COLS] PROGMEM = {
 /* id for user defined functions and macros */
 enum macro_id {
     SLEEP,
+    LOCK,
     DOMO,
 };
 
@@ -63,7 +64,7 @@ const action_t fn_actions[] PROGMEM = {
 #endif
     [0] = ACTION_LAYER_MOMENTARY(1),
     [1] = ACTION_MACRO(SLEEP),
-    [2] = ACTION_MACRO(DOMO),
+    [2] = ACTION_MACRO(LOCK),
 };
 
 /*
@@ -78,6 +79,14 @@ const macro_t *action_get_macro(keyrecord_t *record, uint8_t id, uint8_t opt)
                         I(0),
                         D(LCTL), D(LSFT), D(POWER),
                         U(LCTL), U(LSFT), U(POWER),
+                        END
+                    ) : MACRO_NONE);
+        case LOCK:
+            return (record->event.pressed ?
+                    MACRO(
+                        I(0),
+                        D(LGUI), D(LCTL), D(Q),
+                        U(LGUI), U(LCTL), U(Q),
                         END
                     ) : MACRO_NONE);
         case DOMO:
